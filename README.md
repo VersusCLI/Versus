@@ -1,3 +1,4 @@
+![NPM Build](https://github.com/VersusCLI/Versus/actions/workflows/node.js.yml/badge.svg)
 # Versus
 
 Javascript CLI that works like Maven/Gradle for Java.
