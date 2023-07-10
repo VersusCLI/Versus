@@ -126,24 +126,20 @@ Enhancement suggestions are tracked as [GitHub issues](https://github.com/Versus
 <!-- You might want to create an issue template for enhancement suggestions that can be used as a guide and that defines the structure of the information to be included. If you do so, reference it here in the description. -->
 
 ### Your First Code Contribution
-<!-- TODO
-include Setup of env, IDE and typical getting started instructions?
-
--->
+For your first code contribution you can do as any other contributions.
+You will need to do is:
+- **Download the project** which the main thing you need to do.
+- **Install the necessary dependencies** You will need to install the dependencies for everything to work
+- **Finished? Create a pull request** so we can preview the code and see if the code should be accepte or not
 
 ### Improving The Documentation
-<!-- TODO
-Updating, improving and correcting the documentation
-
--->
+You can improve the documentation if there is anything wrong about it like miss spelling a word, etc.
 
 ## Styleguides
 ### Commit Messages
-<!-- TODO
-
--->
+- **Should include the Contribution prefix.** The Contribution given should include the Contribution Prefix **CONTRIBUION: Contribution Message** as the prefix.
 
 ## Join The Project Team
-<!-- TODO -->
+There is no availability to join the Project team for now. In the feature it would be accepted to join.
 
 <!-- omit in toc -->
