@@ -7,6 +7,15 @@
     "versus": "src/bin/cli.js",
     "versus-jsar": "src/bin/jsar.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/VersusCLI/Versus.git"
+  },
+  "readme": "https://github.com/VersusCLI/Versus#readme",
+  "homepage": "https://github.com/VersusCLI/Versus#readme",
+  "bugs": {
+    "url": "https://github.com/VersusCLI/Versus/issues"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
