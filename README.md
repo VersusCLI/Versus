@@ -1,4 +1,7 @@
-![NPM Build](https://github.com/VersusCLI/Versus/actions/workflows/node.js.yml/badge.svg)
+[![HitCount](https://hits.dwyl.com/VersusCLI/Versus.svg)](https://hits.dwyl.com/VersusCLI/Versus) 
+![NPM Build](https://github.com/VersusCLI/Versus/actions/workflows/node.js.yml/badge.svg)  
+[![https://nodei.co/npm/versus.js.png?downloads=true&downloadRank=true&stars=true](https://nodei.co/npm/versus.js.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/versus.js)  
+
 # Versus
 
 Javascript CLI that works like Maven/Gradle for Java.

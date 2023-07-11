@@ -19,7 +19,10 @@
   },
   "scripts": {
   },
-  "keywords": [],
+  "keywords": [
+    "cli",
+    "jsar"
+  ],
   "author": "Max Jackson",
   "license": "MIT",
   "dependencies": {
