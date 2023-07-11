@@ -1,6 +1,6 @@
 {
   "name": "versus.js",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Creates a Project like Java Maven/Gradle way of creating projects",
   "main": "src/index.js",
   "typings": "typings/index.d.ts",
@@ -17,8 +17,7 @@
   "bugs": {
     "url": "https://github.com/VersusCLI/Versus/issues"
   },
-  "scripts": {
-  },
+  "scripts": {},
   "keywords": [
     "cli",
     "jsar"
