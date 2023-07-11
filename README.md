@@ -4,6 +4,10 @@
 
 # Versus
 
+<p align="center">
+  <img src="assets/versus.png" />
+</p>
+
 Javascript CLI that works like Maven/Gradle for Java.
 
 Versus Provides two Different CLI that provide different stuff.
