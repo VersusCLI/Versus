@@ -1,6 +1,6 @@
 {
   "name": "versus.js",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Creates a Project like Java Maven/Gradle way of creating projects",
   "main": "src/index.js",
   "typings": "typings/index.d.ts",
@@ -21,8 +21,8 @@
     "prepublish": "npm version patch"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Max Jackson",
+  "license": "MIT",
   "dependencies": {
     "cli": "^1.0.1",
     "cli-color": "^2.0.3",
