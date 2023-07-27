@@ -18,7 +18,7 @@ This project currently supports the following versions:
 
 ## Reporting a Security Concern
 
-If you have any security concerns related to this project that are not vulnerabilities, please send an email to **security@example.com** (*<mailto:security@example.com>*) with a detailed description of the concern. We appreciate your diligence in helping us maintain the security of this project.
+If you have any security concerns related to this project that are not vulnerabilities, please create a issue using **<https://github.com/VersusCLI/Versus/issues/new/choose>** with a detailed description of the concern. We appreciate your diligence in helping us maintain the security of this project.
 
 ## Security Updates
 
