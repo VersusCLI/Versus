@@ -1,8 +1,9 @@
-const { execFileSync, execSync } = require("child_process");
+const { execFileSync, execSync, exec } = require("child_process");
 const { readFileSync } = require("fs");
 const path = require("path");
 const semver = require("semver");
 const CrashReporter = require("./CrashReporter");
+const Git = require("./Git");
 
 function executeNPM(command) {
 
@@ -11,11 +12,6 @@ function executeNPM(command) {
         cwd: process.cwd(),
         stdio: "inherit"
     });
-    
-    if (data) {
-        return data;
-    }
-    return null;
 }
 
 function getConfig() {
@@ -62,6 +58,28 @@ function getConfigFrom(file) {
 
 function getReporter() {
     return new CrashReporter();
+}
+
+const git = new Git();
+async function getGit() {
+    const v = await checkGit();
+
+    if (!v)
+        return null;
+
+    return git;
+}
+
+function checkGit() {
+    return new Promise((resolve, reject) => {
+        exec("git --version", (err, stdout, stderr) => {
+            if (err) {
+                resolve(false);
+            } else {
+                resolve(true);
+            }
+        });
+    });
 }
 
 module.exports = {
