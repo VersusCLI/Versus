@@ -49,6 +49,7 @@ class VersusJsar {
                 overwrite: true,
             });
             copyFileSync(path.join(process.cwd(), "versus.config.json"), path.join(process.cwd(), "build", "versus.config.json"));
+            copyFileSync(path.join(process.cwd(), "package.json"), path.join(process.cwd(), "build", "package.json"));
             spinner2.success({
                 text: "Copied packages from src/main/resources"
             });
@@ -82,6 +83,7 @@ class VersusJsar {
             return;
         }
 
+        const f = filename;
         mkdirSync(path.join(os.homedir(), ".versuscache"), { recursive: true });
         const name = path.join(os.homedir(), ".versuscache", path.parse(f).name);
         mkdirSync(name, { recursive: true });
@@ -105,7 +107,9 @@ class VersusJsar {
             let directory = path.dirname(path.join(cacheDir, main));
             let filename = path.basename(path.join(cacheDir, main));
             const install = async () => {
-                await executeNPM("install --prefix " + cacheDir);
+                await executeNPM("install --prefix " + cacheDir, {
+                    inherit: false
+                });
                 return true;
             }
 

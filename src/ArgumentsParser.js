@@ -1,3 +1,5 @@
 const program = require("commander").program;
-program.name("Versus")
+const pkg = require("../package.json");
+program.name("Versus");
+program.version(pkg["version"])
 module.exports = program;
