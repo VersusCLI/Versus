@@ -1,6 +1,7 @@
 [![HitCount](https://hits.dwyl.com/VersusCLI/Versus.svg)](https://github.com/VersusCLI/Versus) 
 ![NPM Build](https://github.com/VersusCLI/Versus/actions/workflows/node.js.yml/badge.svg)  
 [![https://nodei.co/npm/versus.js.png?downloads=true&downloadRank=true&stars=true](https://nodei.co/npm/versus.js.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/versus.js)  
+[![](https://dcbadge.vercel.app/api/server/fjvsfJffNq)](https://discord.gg/fjvsfJffNq)  
 
 # Versus
 
