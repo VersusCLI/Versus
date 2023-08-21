@@ -97,7 +97,10 @@ emitter.on("workspace.init", () => {
         spinner.success();
     }
 
-    executeNPM("init -y");
+    executeNPM("init -y", { inherit: false });
+    executeNPM("install @versusjs/resources", {
+        inherit: true
+    });
     writeFileSync(configFile, JSON.stringify({
         $VERSION: require("../../package.json").version,
         name: path.basename(process.cwd()).toLowerCase().replace(" ", "-"),

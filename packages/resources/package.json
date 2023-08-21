@@ -1,0 +1,18 @@
+{
+  "name": "@versusjs/resources",
+  "version": "1.0.1",
+  "description": "Versus JS Filesystem Module for cached jsar files",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "fs",
+    "versus"
+  ],
+  "author": "Max Jackson",
+  "license": "MIT",
+  "dependencies": {
+    "fs-extra": "^11.1.1"
+  }
+}

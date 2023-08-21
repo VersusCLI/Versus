@@ -1,6 +1,6 @@
 {
   "name": "test",
-  "version": "1.0.2",
+  "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -10,6 +10,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "fs": "^0.0.1-security"
+    "@versusjs/resources": "^1.0.1"
   }
 }

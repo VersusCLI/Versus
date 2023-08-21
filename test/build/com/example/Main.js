@@ -1,7 +1,10 @@
-function getResource() {
+const resources = require("@versusjs/resources");
 
-    console.log("My resources are protected!!!");
+const f = resources.fetchJSONResource("test", "hello.json");
+const h = f["helloWorld"];
 
+if (h != null && h == true) {
+    console.log("Hello World!");
+} else {
+    console.log("No Hello World!");
 }
-
-getResource();
