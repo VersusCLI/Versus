@@ -11,6 +11,9 @@ const nanospinner = require("nanospinner");
 const { execSync } = require("child_process");
 const Versus = require("../lib/Versus");
 
+emitter.setMaxListeners(1000);
+
+
 async function init() {
 
     CommandsParser.command("init")
@@ -25,6 +28,18 @@ async function init() {
         .action((f) => {
             emitter.emit("workspace.run", f);
         });
+
+    CommandsParser.command("test")
+        .description("Tests using field test in versus.config.json")
+        .action((f) => {
+            emitter.emit("workspace.test");
+        });
+
+    CommandsParser.command("update")
+        .description("Updates Versus")
+        .action(() => {
+            emitter.emit("workspace.update");
+        })
 
     let packager = CommandsParser
         .command("packager")
@@ -87,6 +102,7 @@ emitter.on("workspace.init", () => {
         "src/test/resources",
         "src/main/javascript/com",
         "src/main/javascript/com/example",
+        "src/test/javascript/com/example"
     ];
 
     const configFile = "versus.config.json";
@@ -101,14 +117,8 @@ emitter.on("workspace.init", () => {
     executeNPM("install @versusjs/resources", {
         inherit: true
     });
-    writeFileSync(configFile, JSON.stringify({
-        $VERSION: require("../../package.json").version,
-        name: path.basename(process.cwd()).toLowerCase().replace(" ", "-"),
-        version: "1.0-SNAPSHOT",
-        description: "",
-        license: "MIT",
-        main: "com.example.Main"
-    }, null, 4));
+    const test = new Versus()
+    test.getConfigurator().createVersusConfiguration();
     writeFileSync(path.join(process.cwd(), "src", "main", "javascript", "com", "example", "Main.js"), `/*
 This is the main file pointed from the versus.config.json main field.
 This file will get executed when you run \`versus run\` without any arguments. Or you can point the cli to run a specific file when you do \`versus run <file>\`.
@@ -119,6 +129,16 @@ Thank you for using Versus CLI!
 */
 
 console.log("Hello From Versus CLI");`)
+writeFileSync(path.join(process.cwd(), "src", "test", "javascript", "com", "example", "Test.js"), `/*
+This is the test file pointed from the versus.config.json test field.
+This file will get executed when you run \`versus test\` without any arguments.
+
+Note that the file argument must be . without the / because its gonna replace them.
+
+Thank you for using Versus CLI!
+*/
+
+console.log("Test From Versus CLI");`)
     const current = Date.now();
     console.log("Initialized workspace in " + ((current - old) / 1000) + "s");
 });
@@ -129,6 +149,17 @@ emitter.on("workspace.run", (file) => {
     versus.runProject(file);
     
 });
+
+emitter.on("workspace.test", () => {
+    const versus = new Versus();
+    versus.test();
+});
+
+emitter.on("workspace.update", () => {
+    const spinner = nanospinner.createSpinner("Updating Versus CLI").start();
+    executeNPM("install -g versus.js");
+    spinner.success("Updated Package! If any error is reported with npm please create an issue in our github.");
+})
 
 // Run the program
 init();

@@ -90,6 +90,12 @@ class VersusJsar {
         targz.decompress({
             src: f,
             dest: path.join(name),
+            gz: {
+                
+            },
+            tar: {
+
+            }
         }, (err) => {
             if (err)
                 return getReporter().reportError(err);

@@ -13,6 +13,7 @@ class VersusConfigurator {
             description: "",
             license: "MIT",
             main: "com.example.Main",
+            test: "com.example.Test",
             github: {
                 url: "",
                 homepage: "",

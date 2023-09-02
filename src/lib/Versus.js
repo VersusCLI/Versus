@@ -17,6 +17,36 @@ class Versus {
         this.jsar = new VersusJsar(this);
     }
 
+    test() {
+        if (!checkProjectConfigVersion()) {
+            console.log(`${Color.yellowBright("WARNING: ")}` + "Version maybe outdated or over the current api version, If the version is outdated use \"versus update\" to update the package");
+        }
+        
+        const config = getConfig();
+        /**
+         * @type {string}
+         */
+        let main = config["test"];
+
+        if (!main)
+            return getReporter().reportError(new Error("Versus config field doesn't contain the test field. Please check that the test file contains that field and run the command again."), "versus.config.json");
+    
+        main = main.replace(/\./g, "/");
+
+        let directory = path.dirname(path.join(process.cwd(), "src", "test", "javascript", main));
+        let filename = path.basename(path.join(process.cwd(), "src", "test", "javascript", main));
+        if (existsSync(path.join(directory, filename + ".js"))) {
+
+            execSync("node " + path.join(directory, filename + ".js"), {
+                cwd: process.cwd(),
+                encoding: "utf-8",
+                stdio: "inherit"
+            });
+        
+        } else 
+            return getReporter().reportError(new Error("File does not exist within the following directory " + directory + "."), main);
+    }
+
     getConfigurator() {
         return this.configurator;
     }

@@ -12,7 +12,7 @@ function isEmpty(projectName, folder) {
 }
 
 function fetchResource(projectName, file) {
-    return fs.readFileSync(path.join(DEFAULT_VERSUS_FOLDER, projectName, file))
+    return fs.readFileSync(path.join(DEFAULT_VERSUS_FOLDER, projectName, file), "utf-8")
 }
 
 function fetchJSONResource(projectName, file) {
