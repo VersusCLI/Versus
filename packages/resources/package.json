@@ -1,6 +1,6 @@
 {
   "name": "@versusjs/resources",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "Versus JS Filesystem Module for cached jsar files",
   "main": "src/index.js",
   "scripts": {

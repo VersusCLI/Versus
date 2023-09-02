@@ -41,6 +41,11 @@ export class Versus {
      * @param file File to run can be null
      */
     runProject(file?: string);
+
+    /**
+     * Gets the test field from the versus configuration file and runs the class.
+     */
+    test(): void;
 }
 
 export type VersusGithub = {

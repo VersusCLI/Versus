@@ -12,6 +12,8 @@ const nanospinner = require("nanospinner");
 const { execSync } = require("child_process");
 const Versus = require("../lib/Versus");
 
+emitter.setMaxListeners(Infinity)
+
 async function init() {
 
     CommandsParser.command("build")
